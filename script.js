@@ -120,22 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const minutes = myTime.getMinutes();
       const currentMinutes = hours * 60 + minutes;
 
-      // Jack Western hours: Every day 5PM - 12AM
-      const openTime = 17 * 60; // 5PM
-      const closeTime = 24 * 60; // 12AM
+      // Jack Western Tg. Tokong hours: Every day 4:30PM - 11:30PM
+      const openTime = 16 * 60 + 30; // 4:30PM
+      const closeTime = 23 * 60 + 30; // 11:30PM
 
       const dot = heroBadge.querySelector('.badge-dot');
       const text = heroBadge.querySelector('.badge-text');
 
       if (currentMinutes >= openTime && currentMinutes < closeTime) {
         dot.classList.remove('closed');
-        text.textContent = 'Open now until 12:00 AM';
+        text.textContent = 'Open now until 11:30 PM';
       } else if (currentMinutes < openTime) {
         dot.classList.add('closed');
-        text.textContent = 'Opens today at 5:00 PM';
+        text.textContent = 'Opens today at 4:30 PM';
       } else {
         dot.classList.add('closed');
-        text.textContent = 'Closed \u2014 Opens tomorrow at 5:00 PM';
+        text.textContent = 'Closed \u2014 Opens tomorrow at 4:30 PM';
       }
     };
 
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========================================
 // Google Places API — Reviews & Rating
 // ========================================
-const PLACE_ID = 'ChIJbXbsIUqjSjARCVaw8_P-FC0';
+const PLACE_ID = 'ChIJUTCte7vDSjARmn3hzBFnA8c';
 const CACHE_KEY = 'jackwestern_google_reviews';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 

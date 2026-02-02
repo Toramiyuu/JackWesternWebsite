@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JACK WESTERN CUISINE + | Western Food - Georgetown, Penang</title>
+  <meta name="description" content="Affordable Western cuisine in Georgetown, Penang since 2008. Steaks, chicken chops, pasta, fish & chips with live music. Dine-in, pickup & delivery.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JACK WESTERN CUISINE + | Western Food - Georgetown, Penang">
+  <meta property="og:description" content="Hearty, affordable Western food on Jalan Trengganu, Georgetown. Steaks, chops, pasta & more with live music nights.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:url" content="https://toramiyuu.github.io/JackWesternWebsite/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200">
+  <meta property="og:locale" content="en_MY">
+  <meta property="og:site_name" content="Jack Western Cuisine">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JACK WESTERN CUISINE + | Western Food - Georgetown, Penang">
+  <meta name="twitter:description" content="Hearty, affordable Western food in Georgetown, Penang. Steaks, chops, pasta & live music.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200">
+
+  <!-- Geo Meta -->
+  <meta name="geo.region" content="MY-07">
+  <meta name="geo.placename" content="George Town, Penang">
+  <meta name="geo.position" content="5.4074625;100.3089392">
+  <meta name="ICBM" content="5.4074625, 100.3089392">
+
+  <link rel="canonical" href="https://toramiyuu.github.io/JackWesternWebsite/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1">
+
+  <!-- Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Jack Western Cuisine + (Georgetown)",
+    "description": "Affordable Western cuisine in Georgetown, Penang since 2008. Steaks, chicken chops, pasta, fish & chips with live music.",
+    "url": "https://toramiyuu.github.io/JackWesternWebsite/",
+    "telephone": "+60109691288",
+    "servesCuisine": ["Western", "Steak", "Pasta"],
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lot 2781, Jln Trengganu, Taman Kampar",
+      "addressLocality": "George Town",
+      "addressRegion": "Penang",
+      "postalCode": "10460",
+      "addressCountry": "MY"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 5.4074625,
+      "longitude": 100.3089392
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:00", "closes": "00:00" }
+    ],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200",
+    "menu": "https://toramiyuu.github.io/JackWesternWebsite/#menu",
+    "acceptsReservations": false
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <span class="loader-mark">JW+</span>
+      <span class="loader-text">JACK WESTERN CUISINE</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">JW+</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="https://www.instagram.com/jackwesterncuisine/" target="_blank" rel="noopener">Connect</a></li>
+        <li><a href="#contact" class="nav-cta">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1920&q=80"
+         alt="Grilled steak at Jack Western Cuisine" width="1920" height="1280" fetchpriority="high">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-hours-badge" id="heroBadge" aria-live="polite">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Open tonight until 12:00 AM</span>
+      </div>
+      <p class="hero-subtitle">Jalan Trengganu, Georgetown</p>
+      <h1 class="hero-title">JACK WESTERN</h1>
+      <p class="hero-tagline">Cuisine +</p>
+      <p class="hero-description">Hearty Western food &amp; live music since 2008</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="tel:+60109691288" class="btn btn-outline">Call to Order</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+               alt="Jack Western Cuisine dining atmosphere" class="about-img" loading="lazy" width="800" height="1000">
+        </div>
+        <div class="about-content">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Delicious, Hearty &amp; Affordable</h2>
+          <p class="about-text">
+            Jack Western Cuisine has been serving authentic Western dishes across Penang since
+            2008. What started as a single stall in Ayer Itam has grown into three beloved
+            branches across the island &mdash; including our Georgetown flagship on Jalan Trengganu.
+          </p>
+          <p class="about-text">
+            Our open-concept kitchen serves up generous portions of steaks, chicken chops,
+            fish &amp; chips, pasta, and more &mdash; all at prices that keep locals and
+            tourists coming back. Every set comes with drinks included.
+          </p>
+          <p class="about-text">
+            With live music every Wednesday and Friday, spacious outdoor seating, and a
+            family-friendly atmosphere, Jack Western is the perfect spot to unwind after
+            a long day in Georgetown.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight" id="googleRatingHighlight">
+              <span class="highlight-number" id="googleRatingNumber">4.8</span>
+              <span class="highlight-label" id="googleRatingLabel">Google (1,100+ reviews)</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">2008</span>
+              <span class="highlight-label">Established</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">3</span>
+              <span class="highlight-label">Branches in Penang</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">RM20</span>
+              <span class="highlight-label">Sets from</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <p class="section-label center">Gallery</p>
+      <h2 class="section-title center">The Scene</h2>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-label="Ribeye Steak">
+          <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80"
+               alt="Grilled ribeye steak" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Dining Area">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+               alt="Jack Western dining area" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Chicken Chop">
+          <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80"
+               alt="Grilled chicken chop with sides" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Carbonara">
+          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80"
+               alt="Creamy carbonara pasta" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Fish & Chips">
+          <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=800&q=80"
+               alt="Fish and chips" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Grilled Lamb">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80"
+               alt="Grilled lamb chop" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Mushroom Soup">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80"
+               alt="Homemade mushroom soup" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Live Music">
+          <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80"
+               alt="Live music performance" loading="lazy" width="600" height="400">
+        </div>
+        <div class="gallery-item" data-label="Grilled Salmon">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80"
+               alt="Grilled fresh salmon" loading="lazy" width="600" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials">
+    <div class="container">
+      <p class="section-label center">What People Say</p>
+      <h2 class="section-title center">Guest Reviews</h2>
+      <p class="reviews-summary">Rated <strong id="googleRatingInline">4.8</strong> on Google &middot; <span id="googleReviewCount">1,100+</span> reviews</p>
+      <div class="testimonials-grid" id="reviewsGrid">
+        <!-- Fallback reviews — replaced by Google Places API when available -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg></div>
+          <p class="testimonial-text">"Great Western food at affordable prices! The chicken cordon bleu set was generous and the mushroom soup was creamy and flavourful. Love the open-air dining concept."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Vanessa L.</span>
+            <span class="testimonial-source"><span class="review-source-badge">Google</span> a week ago</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg></div>
+          <p class="testimonial-text">"Best value Western food in Penang! The lamb chop set was perfectly grilled and the portion is huge. Live music on Fridays makes it even better. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Ahmad R.</span>
+            <span class="testimonial-source"><span class="review-source-badge">Google</span> 2 weeks ago</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg></div>
+          <p class="testimonial-text">"Came for the ribeye steak and was not disappointed. The meat was tender and well-seasoned. Place is spacious and great for groups. Will definitely come back for the spaghetti next time."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Wei Lin T.</span>
+            <span class="testimonial-source"><span class="review-source-badge">Google</span> a month ago</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars"><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#d4863a"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg><svg viewBox="0 0 20 20" width="18" height="18" fill="#352e26"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.28l-4.77 2.51.91-5.32L2.27 6.7l5.34-.78z"/></svg></div>
+          <p class="testimonial-text">"Good place for affordable Western food with friends. The carbonara was creamy and the fish cordon bleu was crispy on the outside. Great atmosphere especially with live music nights."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Siti N.</span>
+            <span class="testimonial-source"><span class="review-source-badge">Google</span> 3 weeks ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <p class="section-label center">Our Menu</p>
+      <h2 class="section-title center">What We Serve</h2>
+      <p class="section-subtitle center">All main course sets come with drinks included. Scan the QR code at your table to order.</p>
+
+      <div class="menu-categories">
+        <button class="menu-tab active" data-category="chicken">Chicken</button>
+        <button class="menu-tab" data-category="fish">Fish</button>
+        <button class="menu-tab" data-category="steak">Steak &amp; Lamb</button>
+        <button class="menu-tab" data-category="spaghetti">Spaghetti</button>
+        <button class="menu-tab" data-category="pork">Pork</button>
+        <button class="menu-tab" data-category="starters">Starters</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Chicken Series -->
+        <div class="menu-item" data-category="chicken">
+          <div class="menu-item-info">
+            <h3>Chicken Chop Set <span class="menu-badge">Popular</span></h3>
+            <p>Chicken chop with sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 20.90</span>
+        </div>
+        <div class="menu-item" data-category="chicken">
+          <div class="menu-item-info">
+            <h3>Grilled Chicken Set</h3>
+            <p>Grilled chicken with sauce of your choice, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 22.90</span>
+        </div>
+        <div class="menu-item" data-category="chicken">
+          <div class="menu-item-info">
+            <h3>Chicken Cordon Bleu Set <span class="menu-badge">Popular</span></h3>
+            <p>Chicken cordon bleu with tartar sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 24.90</span>
+        </div>
+        <div class="menu-item" data-category="chicken">
+          <div class="menu-item-info">
+            <h3>Chicken Maryland Set</h3>
+            <p>Chicken, sausage, ham with tartar sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 23.00</span>
+        </div>
+        <div class="menu-item" data-category="chicken">
+          <div class="menu-item-info">
+            <h3>Indiana Chicken Set</h3>
+            <p>Chicken with Indiana sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 22.90</span>
+        </div>
+
+        <!-- Fish Series -->
+        <div class="menu-item hidden" data-category="fish">
+          <div class="menu-item-info">
+            <h3>Fish &amp; Chips Set <span class="menu-badge">Popular</span></h3>
+            <p>Fish fillet with tartar sauce, baked beans, garlic bread &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="fish">
+          <div class="menu-item-info">
+            <h3>Grilled Fish Set</h3>
+            <p>Grilled fish with sauce of your choice, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 24.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="fish">
+          <div class="menu-item-info">
+            <h3>Fish Maryland Set</h3>
+            <p>Fish fillet, sausage, ham with tartar sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 27.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="fish">
+          <div class="menu-item-info">
+            <h3>Fish Cordon Bleu Set</h3>
+            <p>Fish cordon bleu with tartar sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 29.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="fish">
+          <div class="menu-item-info">
+            <h3>Grilled Fresh Salmon Set <span class="menu-badge">Premium</span></h3>
+            <p>Perfectly grilled salmon with butter orange sauce</p>
+          </div>
+          <span class="menu-item-price">RM 42.90</span>
+        </div>
+
+        <!-- Steak & Lamb -->
+        <div class="menu-item hidden" data-category="steak">
+          <div class="menu-item-info">
+            <h3>Aus Grain Fed Ribeye Steak <span class="menu-badge">Premium</span></h3>
+            <p>Grilled ribeye with sauce of your choice, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 71.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="steak">
+          <div class="menu-item-info">
+            <h3>Grilled Lamb Chop Set <span class="menu-badge">Popular</span></h3>
+            <p>Grilled lamb with sauce of your choice, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 42.90</span>
+        </div>
+
+        <!-- Spaghetti Series -->
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Chicken Bolognese Set</h3>
+            <p>Chicken bolognese with mushrooms</p>
+          </div>
+          <span class="menu-item-price">RM 18.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Carbonara Set <span class="menu-badge">Popular</span></h3>
+            <p>Creamy carbonara with sausage &amp; bacon</p>
+          </div>
+          <span class="menu-item-price">RM 20.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Seafood Aglio Olio Set</h3>
+            <p>Aglio olio with prawns, hotate scallops, squid &amp; vegetables</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Thai Style Seafood Marinara Set</h3>
+            <p>Spaghetti in Thai style marinara, prawns, scallops, squid &amp; vegetables</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Seafood Baked Cheese Set</h3>
+            <p>Spaghetti with prawns, hotate scallops, squid &amp; baked with cheese</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Smoked Duck Olio Set</h3>
+            <p>Pick your favourite drinks with the meal!</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Smoked Duck Carbonara Set</h3>
+            <p>Pick your drinks with your meal!</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="spaghetti">
+          <div class="menu-item-info">
+            <h3>Jumbo &amp; Bacon Set</h3>
+            <p>Sausage, bacon, mashed potato &amp; spaghetti</p>
+          </div>
+          <span class="menu-item-price">RM 23.90</span>
+        </div>
+
+        <!-- Pork Series -->
+        <div class="menu-item hidden" data-category="pork">
+          <div class="menu-item-info">
+            <h3>Grilled Pork Set</h3>
+            <p>Grilled pork with sauce of your choice, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 27.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="pork">
+          <div class="menu-item-info">
+            <h3>Grilled Cheese Cordon Pork Set</h3>
+            <p>Grilled pork cordon with cheese, sauce, baked beans, garlic bread, coleslaw &amp; fries</p>
+          </div>
+          <span class="menu-item-price">RM 37.90</span>
+        </div>
+
+        <!-- Starters -->
+        <div class="menu-item hidden" data-category="starters">
+          <div class="menu-item-info">
+            <h3>Chicken Nuggets</h3>
+            <p>6 pieces</p>
+          </div>
+          <span class="menu-item-price">RM 9.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="starters">
+          <div class="menu-item-info">
+            <h3>Homemade Mushroom Soup <span class="menu-badge">Popular</span></h3>
+            <p>Served with garlic bread</p>
+          </div>
+          <span class="menu-item-price">RM 9.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="starters">
+          <div class="menu-item-info">
+            <h3>Seafood Nyonya Pie</h3>
+            <p>5 pieces</p>
+          </div>
+          <span class="menu-item-price">RM 9.90</span>
+        </div>
+        <div class="menu-item hidden" data-category="starters">
+          <div class="menu-item-info">
+            <h3>Mashed Potato</h3>
+            <p>2 scoops</p>
+          </div>
+          <span class="menu-item-price">RM 9.90</span>
+        </div>
+      </div>
+
+      <p class="menu-note">* All main course sets include drinks. Prices may vary &mdash; confirm at the restaurant. Order via QR code at your table.</p>
+      <p class="menu-note menu-note-dietary">Non-halal establishment. Pork items available.</p>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section class="section hours" id="hours">
+    <div class="container">
+      <div class="hours-grid">
+        <div class="hours-info">
+          <p class="section-label">Visit Us</p>
+          <h2 class="section-title">Hours &amp; Location</h2>
+          <div class="hours-schedule">
+            <div class="hours-row">
+              <span>Monday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Tuesday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Wednesday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Thursday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Friday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Saturday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span>Sunday</span><span>5:00 PM &ndash; 12:00 AM</span>
+            </div>
+          </div>
+          <p class="hours-note">Open daily &mdash; Walk-ins welcome, no reservations needed</p>
+
+          <div class="location-details">
+            <p class="location-address">
+              Lot 2781, Jln Trengganu<br>
+              Taman Kampar, 10460<br>
+              George Town, Pulau Pinang<br>
+              Malaysia
+            </p>
+            <a href="https://maps.app.goo.gl/wk3SPJPpbARqUE718" target="_blank" rel="noopener" class="btn btn-outline">
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="hours-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1986.0!2d100.3089392!3d5.4074625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac34a21ec766d%3A0x2d14fef3afb05609!2sJack%20Western%20Cuisine%20%2B%20(Georgetown)!5e0!3m2!1sen!2smy!4v1706000000000"
+            title="Jack Western Cuisine location on Google Maps"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label center">Get In Touch</p>
+        <h2 class="section-title center">Contact &amp; Order</h2>
+        <p class="section-subtitle center">Call us, visit us, or order delivery through Foodpanda</p>
+
+        <div class="reservation-cta-box">
+          <p class="reservation-cta-text">Walk-ins welcome every day from 5:00 PM. For takeaway &amp; delivery, call us or order through Foodpanda.</p>
+          <div class="reservation-cta-buttons">
+            <a href="tel:+60109691288" class="btn btn-primary reservation-cta-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call to Order
+            </a>
+            <a href="https://www.foodpanda.my/restaurant/lcpt/jack-western-cuisine-georgetown" target="_blank" rel="noopener" class="btn btn-outline reservation-cta-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              Order on Foodpanda
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-methods">
+          <a href="tel:+60109691288" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3>Call Us</h3>
+            <p>010-969 1288</p>
+          </a>
+
+          <a href="https://www.instagram.com/jackwesterncuisine/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </div>
+            <h3>Instagram</h3>
+            <p>@jackwesterncuisine</p>
+          </a>
+
+          <a href="https://maps.app.goo.gl/wk3SPJPpbARqUE718" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <h3>Directions</h3>
+            <p>Jln Trengganu, Georgetown</p>
+          </a>
+        </div>
+
+        <p class="contact-events">Dine-in, kerbside pickup &amp; no-contact delivery available. Live music every Wednesday &amp; Friday!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>JACK WESTERN CUISINE +</h3>
+          <p class="footer-tagline">Delicious, hearty &amp; affordable Western food since 2008 &mdash; three branches across Penang.</p>
+          <p>Lot 2781, Jln Trengganu, Georgetown, Penang</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/jackwesterncuisine/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://maps.app.goo.gl/wk3SPJPpbARqUE718" target="_blank" rel="noopener" aria-label="Google Maps">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </a>
+            <a href="tel:+60109691288" aria-label="Phone">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#hours">Hours & Location</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-info">
+          <h4>Hours</h4>
+          <p>Daily: 5:00 PM &ndash; 12:00 AM</p>
+          <p>Open 7 days a week</p>
+          <p class="footer-notice">Non-halal establishment</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 JACK WESTERN CUISINE +. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile CTA Bar -->
+  <div class="mobile-cta-bar" id="mobileCta">
+    <a href="tel:+60109691288" class="mobile-cta-btn cta-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a href="#contact" class="mobile-cta-btn cta-reserve">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Order
+    </a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- Google Maps Places API -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAthBWHrKdDFqPBMju2SwForOSsnLw_IjQ&libraries=places&callback=initPlaces"></script>
+  <script src="script.js?v=1"></script>
+</body>
+</html>

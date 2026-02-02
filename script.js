@@ -110,9 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-  // --- Hero hours badge ---
+  // --- Hero hours badge (multi-branch) ---
   const heroBadge = document.getElementById('heroBadge');
   if (heroBadge) {
+    const branches = [
+      { name: 'Tg. Tokong', open: 16 * 60 + 30, close: 23 * 60 + 30 },   // 4:30 PM - 11:30 PM
+      { name: 'Georgetown', open: 17 * 60, close: 24 * 60 },               // 5:00 PM - 12:00 AM
+      { name: 'Ayer Itam', open: 16 * 60, close: 23 * 60 + 30 }            // 4:00 PM - 11:30 PM
+    ];
+
     const updateHoursBadge = () => {
       const now = new Date();
       const myTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kuala_Lumpur' }));
@@ -120,22 +126,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const minutes = myTime.getMinutes();
       const currentMinutes = hours * 60 + minutes;
 
-      // Jack Western Tg. Tokong hours: Every day 4:30PM - 11:30PM
-      const openTime = 16 * 60 + 30; // 4:30PM
-      const closeTime = 23 * 60 + 30; // 11:30PM
-
       const dot = heroBadge.querySelector('.badge-dot');
       const text = heroBadge.querySelector('.badge-text');
 
-      if (currentMinutes >= openTime && currentMinutes < closeTime) {
+      const openBranches = branches.filter(b => currentMinutes >= b.open && currentMinutes < b.close);
+
+      if (openBranches.length > 0) {
         dot.classList.remove('closed');
-        text.textContent = 'Open now until 11:30 PM';
-      } else if (currentMinutes < openTime) {
-        dot.classList.add('closed');
-        text.textContent = 'Opens today at 4:30 PM';
+        if (openBranches.length === branches.length) {
+          text.textContent = 'All branches open now';
+        } else {
+          text.textContent = openBranches.map(b => b.name).join(' & ') + ' open now';
+        }
       } else {
         dot.classList.add('closed');
-        text.textContent = 'Closed \u2014 Opens tomorrow at 4:30 PM';
+        // Find earliest opening branch
+        const earliest = branches.reduce((a, b) => a.open < b.open ? a : b);
+        const earlyHour = Math.floor(earliest.open / 60);
+        const earlyMin = earliest.open % 60;
+        const timeStr = `${earlyHour > 12 ? earlyHour - 12 : earlyHour}:${earlyMin.toString().padStart(2, '0')} PM`;
+        if (currentMinutes < earliest.open) {
+          text.textContent = `Opens today at ${timeStr}`;
+        } else {
+          text.textContent = `Closed \u2014 Opens tomorrow at ${timeStr}`;
+        }
       }
     };
 
@@ -218,21 +232,22 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========================================
 // Google Places API — Reviews & Rating
 // ========================================
-const PLACE_ID = 'ChIJUTCte7vDSjARmn3hzBFnA8c';
-const CACHE_KEY = 'jackwestern_google_reviews';
+const PLACE_ID_REVIEWS = 'ChIJbXbsIUqjSjARCVaw8_P-FC0'; // Georgetown (most reviews)
+const PLACE_ID_PHOTOS = 'ChIJUTCte7vDSjARmn3hzBFnA8c';  // Tg. Tokong (photos)
+const CACHE_KEY = 'jackwestern_google_reviews_v2';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
 function initPlaces() {
   const div = document.createElement('div');
   const service = new google.maps.places.PlacesService(div);
 
-  // Fetch reviews (with cache)
+  // Fetch reviews from Georgetown branch (with cache)
   const cachedReviews = loadCache(CACHE_KEY, CACHE_DURATION);
   if (cachedReviews) {
     renderGoogleData(cachedReviews);
   } else {
     service.getDetails({
-      placeId: PLACE_ID,
+      placeId: PLACE_ID_REVIEWS,
       fields: ['rating', 'user_ratings_total', 'reviews']
     }, (place, status) => {
       if (status !== google.maps.places.PlacesServiceStatus.OK || !place) return;
@@ -251,9 +266,9 @@ function initPlaces() {
     });
   }
 
-  // Fetch real photos from Google Places
+  // Fetch real photos from Tg. Tokong branch
   service.getDetails({
-    placeId: PLACE_ID,
+    placeId: PLACE_ID_PHOTOS,
     fields: ['photos']
   }, (place, status) => {
     if (status !== google.maps.places.PlacesServiceStatus.OK || !place || !place.photos) return;
@@ -295,7 +310,7 @@ function renderGoogleData(data) {
     ratingNum.textContent = data.rating.toFixed(1);
   }
   if (ratingLabel && data.totalReviews) {
-    ratingLabel.textContent = `Google (${data.totalReviews} reviews)`;
+    ratingLabel.textContent = `Google Rating`;
   }
   if (ratingInline && data.rating) {
     ratingInline.textContent = data.rating.toFixed(1);

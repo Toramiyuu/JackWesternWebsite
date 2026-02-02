@@ -526,7 +526,7 @@ body.menu-open {
   transform: scale(1.05);
 }
 
-.gallery-item::after {
+.gallery-item[data-label]::after {
   content: attr(data-label);
   position: absolute;
   bottom: 12px;
@@ -807,6 +807,72 @@ body.menu-open {
   width: 100%;
   height: 100%;
   min-height: 500px;
+}
+
+/* --- Branch Cards --- */
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.branch-card {
+  padding: 32px 28px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.branch-card:hover {
+  border-color: var(--color-accent);
+}
+
+.branch-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.branch-card .branch-area {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.branch-card .branch-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.branch-card .branch-detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+
+.branch-card .branch-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.branch-card .branch-actions a {
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 /* ========================================
@@ -1118,6 +1184,10 @@ body.menu-open {
 
   .hours-map iframe {
     min-height: 350px;
+  }
+
+  .branches-grid {
+    grid-template-columns: 1fr;
   }
 
   .menu-grid {

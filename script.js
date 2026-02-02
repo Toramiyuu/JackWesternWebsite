@@ -223,34 +223,41 @@ const CACHE_KEY = 'jackwestern_google_reviews';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
 function initPlaces() {
-  const cachedReviews = loadCache(CACHE_KEY, CACHE_DURATION);
-
-  if (cachedReviews) {
-    renderGoogleData(cachedReviews);
-    return;
-  }
-
   const div = document.createElement('div');
   const service = new google.maps.places.PlacesService(div);
 
+  // Fetch reviews (with cache)
+  const cachedReviews = loadCache(CACHE_KEY, CACHE_DURATION);
+  if (cachedReviews) {
+    renderGoogleData(cachedReviews);
+  } else {
+    service.getDetails({
+      placeId: PLACE_ID,
+      fields: ['rating', 'user_ratings_total', 'reviews']
+    }, (place, status) => {
+      if (status !== google.maps.places.PlacesServiceStatus.OK || !place) return;
+      const reviewData = {
+        rating: place.rating,
+        totalReviews: place.user_ratings_total,
+        reviews: (place.reviews || []).map(r => ({
+          author: r.author_name,
+          rating: r.rating,
+          text: r.text,
+          time: r.relative_time_description
+        }))
+      };
+      saveCache(CACHE_KEY, reviewData);
+      renderGoogleData(reviewData);
+    });
+  }
+
+  // Fetch real photos from Google Places
   service.getDetails({
     placeId: PLACE_ID,
-    fields: ['rating', 'user_ratings_total', 'reviews']
+    fields: ['photos']
   }, (place, status) => {
-    if (status !== google.maps.places.PlacesServiceStatus.OK || !place) return;
-
-    const reviewData = {
-      rating: place.rating,
-      totalReviews: place.user_ratings_total,
-      reviews: (place.reviews || []).map(r => ({
-        author: r.author_name,
-        rating: r.rating,
-        text: r.text,
-        time: r.relative_time_description
-      }))
-    };
-    saveCache(CACHE_KEY, reviewData);
-    renderGoogleData(reviewData);
+    if (status !== google.maps.places.PlacesServiceStatus.OK || !place || !place.photos) return;
+    renderGooglePhotos(place.photos);
   });
 }
 
@@ -334,4 +341,41 @@ function renderGoogleData(data) {
   }).join('');
 
   grid.innerHTML = cards;
+}
+
+// ========================================
+// Google Places API — Real Photos
+// ========================================
+function renderGooglePhotos(photos) {
+  if (!photos || photos.length === 0) return;
+
+  // Replace hero background
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && photos[0]) {
+    heroBg.src = photos[0].getUrl({ maxWidth: 1920 });
+    heroBg.alt = 'Jack Western Cuisine +';
+  }
+
+  // Replace about image
+  const aboutImg = document.querySelector('.about-img');
+  if (aboutImg && photos[1]) {
+    aboutImg.src = photos[1].getUrl({ maxWidth: 800 });
+    aboutImg.alt = 'Jack Western Cuisine dining';
+  }
+
+  // Replace gallery images
+  const galleryItems = document.querySelectorAll('#galleryGrid .gallery-item img');
+  const galleryPhotos = photos.slice(1); // skip hero photo
+  galleryItems.forEach((img, i) => {
+    if (galleryPhotos[i]) {
+      img.src = galleryPhotos[i].getUrl({ maxWidth: 800 });
+      img.alt = 'Jack Western Cuisine';
+    }
+  });
+
+  // Replace OG image meta tag
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage && photos[0]) {
+    ogImage.content = photos[0].getUrl({ maxWidth: 1200 });
+  }
 }
